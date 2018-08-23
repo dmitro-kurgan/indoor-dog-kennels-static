@@ -1,0 +1,240 @@
+footer {
+	.footer {
+		background-color: #faf6f1;
+		padding: 80px 0 100px 0;
+		@media #{$desctop} {
+			padding: 50px 0 100px 0;
+		}
+		h2 {
+			color: #3c3b3a;
+			font-size: 22px;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+		&__form {
+			.btn {
+				display: block;
+				background-color: #3c3b3b;
+				width: 309px;
+				height: 55px;
+				font: 500 normal 18px $font2;
+				border-radius: 0px;
+				color: $main_color;
+				text-transform: uppercase;
+				transition: $main_transition;
+				@media #{$desctop} {
+					width: 100%;
+				}
+				@media #{$mobile} {
+					margin-top: 30px;
+				}
+				&:hover {
+					background-color: #bdc4b0;
+					color: #3c3b3b
+				}
+			}
+			.form-group {
+				position: relative;
+				height: 55px;
+				line-height: 55px;
+				margin-bottom: 0px;
+			}
+			.form-control {
+				border: none;
+				border-bottom: 1px solid #6d6d6d;
+				border-radius: 0px;
+				box-shadow: none;
+				background: transparent;
+				padding-left: 0px;
+				padding-right: 0px;
+				display: inline-block;
+				vertical-align: bottom;
+				height: initial;
+				color: #6d6d6d;
+				font: 500 normal 22px $font2;
+			}
+			textarea {
+				resize: none;
+			}
+			label {
+				position: absolute;
+				left: 15px;
+				top: 20px;
+				bottom: 0px;
+				color: #6d6d6d;
+				font: 500 normal 22px $font2;
+				&.required {
+					&:after {
+						position: absolute;
+						content: '*';
+					}
+				}
+			}
+			&-attachfile, &-comment {
+				margin-top: 35px;
+			}
+			&-comment {
+				label {
+					top: 5px;
+				}
+			}
+			&-attachfile {
+				label {
+					position: initial;
+				}
+				span {
+					display: inline-block;
+					padding-left: 45px;
+					position: relative;
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0px;
+						top: 0px;
+						bottom: 0px;
+						margin: auto;
+						background-image: url(../images/share.png);
+						background-repeat: no-repeat;
+						background-poition: center;
+						background-size: cover;
+						width: 23px;
+						height: 25px;
+					}
+				}
+			}
+			.inputfile {
+				width: 0.1px;
+				height: 0.1px;
+				opacity: 0;
+				overflow: hidden;
+				position: absolute;
+				z-index: -1;
+				& + label {
+					// margin: 100px auto;
+					font: 500 normal 23px $font2;
+					color: #3e3d3d;
+					background-color: #bec3af;
+					// display: inline-block;
+					cursor: pointer;
+					// padding: 20px;
+					width: 309px;
+					height: 55px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					margin-top: 12px;
+				}
+				&:focus + label {
+					background-color: #bec3af;
+				}
+				& + label:hover {
+					background-color: #bec3af;
+				}
+			}
+		}
+		&__bottom {
+			margin-top: 80px;
+			@media #{$desctop} {
+				margin-top: 50px;
+			}
+			&-title {
+				color: #3c3b3a;
+				font-size: 20px;
+				letter-spacing: -0.4px;
+				font-weight: 700;
+				@media #{$desctop-md} {
+					font-size: 16px;
+				}
+			}
+		}
+		&__location, &__contacts {
+			ul {
+				margin-top: 35px;
+				@media #{$desctop} {
+					margin-top: 20px;
+				}
+				li {
+					color: #b3b3b3;
+					font: 500 normal 20px $font2;
+					span {
+						color: #3c3b3b;
+						text-transform: uppercase;
+						margin-right: 3px;
+					}
+					& + li {
+						margin-top: 10px;
+					}
+				}
+				a {
+					transition: $main_transition;
+					&:hover {
+						color: #b7bba1;
+					}
+				}
+			}
+		}
+		&__contacts {
+			@media #{$mobile} {
+				margin-top: 40px;
+			}
+		}
+		&__socials {
+			ul {
+				margin-top: 35px;
+				@media #{$desctop} {
+					margin-top: 20px;
+				}
+				li {
+					float: left;
+					& + li {
+						margin-left: 30px;
+					}
+				}
+			}
+			a {
+				font-size: 18px;
+				color: #b3b3b3;
+				transition: $main_transition;
+				&:hover {
+					color: #b7bba1;
+				}
+			}
+		}
+		&__logo {
+			margin-top: 35px;
+			display: block;
+			background: url(../images/unitspace.svg)no-repeat center;
+			background-size: contain;
+			width: 93px;
+			height: 37px;
+			@media #{$desctop} {
+				margin-top: 20px;
+			}
+		}
+		&__socials, &__production, &__copyright {
+			@media #{$desctop} {
+				margin-top: 40px;
+			}
+		}
+		&__copyright {
+			.footer__bottom-title {
+				text-align: right;
+				@media #{$desctop} {
+					text-align: left;
+				}
+			}
+			p {
+				margin-top: 35px;
+				font: 500 normal 18px $font2;
+				color: #b3b3b3;
+				@media #{$desctop} {
+					margin-top: 20px;
+				}
+			}
+			span {
+				margin-left: 4px;
+				display: inline-block;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+$section-margin: 80px;
+//content\
+.wrapper {
+	&--index {
+		overflow: hidden;
+	}
+}
+@import "home";
+@import "products";
+@import "services";
+@import "popular";
+@import "blog";

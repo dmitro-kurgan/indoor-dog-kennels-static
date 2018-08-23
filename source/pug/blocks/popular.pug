@@ -1,0 +1,41 @@
+section.popular#popular
+	.container
+		.section-title
+			span Fusce eleifend, nulla egetp
+			h2
+				| Popular questions
+				p 03.
+	.popular__block
+		.container
+			.popular__top
+				p.
+					Ut lobortis, sem eget accumsan viverra, elit risus iaculis urna, nec mollis enim tellus in libero.
+			.popular__accordion.container
+				.row
+					.col-sm-6
+						.panel-group#accordion1
+							mixin panel(title, id, className, txt, aria)
+								.panel.panel-default
+									.panel-heading
+										h4.panel-title
+											a(href="#" + id, data-toggle="collapse", data-parent="#accordion1", aria-expanded= aria)= title
+									div(id= id, class="panel-collapse collapse " + className)
+										.panel-body
+											p= txt
+							+panel('Collapsible Group 1', 'collapse1', 'in', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'true')
+							+panel('Collapsible Group 2', 'collapse2', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'false')
+							+panel('Collapsible Group 3', 'collapse3', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'false')
+					.col-sm-6
+						.panel-group#accordion2
+							mixin panel(title, id, className, txt, aria)
+								.panel.panel-default
+									.panel-heading
+										h4.panel-title
+											a(href="#" + id, data-toggle="collapse", data-parent="#accordion2", aria-expanded= aria)= title
+									div(id= id, class="panel-collapse collapse " + className)
+										.panel-body
+											p= txt
+							+panel('Collapsible Group 4', 'collapse4', 'in', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'true')
+							+panel('Collapsible Group 5', 'collapse5', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'false')
+							+panel('Collapsible Group 6', 'collapse6', '', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'false')
+		.popular__background(style="background-image: url(" + require('../../components/images/slider-home-2.jpg') + ")")

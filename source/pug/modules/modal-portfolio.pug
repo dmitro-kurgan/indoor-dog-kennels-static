@@ -1,0 +1,25 @@
+#modalPortfolio.modal-portfolio.modal.fade(role='dialog')
+  .modal-close(data-dismiss='modal')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        .slider.slick-for
+          mixin slick-for(img)
+            div
+              .slick-for__img(style="background-image:url(" + require('../../components/images/slider-home-' + img + '.jpg') + ")")
+          - var arr = [1,2,3,4,5,6,1,2,3,4,5]
+          each num in arr
+            +slick-for(num)
+      .modal-body
+        h6.modal-title
+          | Lorem ipsum dolor sit amet, consectetur adipiscing 
+        .modal-text
+          p
+            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sit amet augue ultricies, laoreet quam quis, porttitor dolor. Donec in vehicula neque, quis interdum risus. Integer nec nisi vel elit cursus dignissim. Praesent varius rhoncus urna, vitae malesuada leo consectetur eget. Nullam nec commodo sem. Integer dictum aliquet magna ac ultricies. Nam at ligula lorem. Cras id lorem in lectus laoreet aliquet tempor et enim. Donec a augue ultrices, lobortis libero id, euismod dui. Proin et tortor vestibulum, ultricies tellus vel, vehicula ante.
+      .modal-footer
+        .slider.slick-nav
+            mixin slick-nav(img)
+              div
+                .slick-nav__img(style="background-image:url(" + require('../../components/images/slider-home-' + img + '.jpg') + ")")
+            each num in arr
+              +slick-nav(num)

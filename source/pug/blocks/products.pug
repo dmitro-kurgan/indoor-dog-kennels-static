@@ -1,0 +1,62 @@
+section.products#products
+	.container
+		.section-title
+			span Fusce eleifend, nulla egetp
+			h2
+				| Products
+				p 01.
+		.products__block
+			ul.nav.nav-pills
+				li(class="active")
+					a(href="#menu1", data-toggle="pill") All Products
+						span.nav__num 20
+				li
+					a(href="#menu2", data-toggle="pill") Lorem ipsum
+						span.nav__num 03
+				li
+					a(href="#menu3", data-toggle="pill") Proin
+						span.nav__num 05
+				li
+					a(href="#menu4", data-toggle="pill") Nulla tempor
+						span.nav__num 08
+			.tab-content
+				div(id="menu1", class="tab-pane fade in active")
+					.tab-content__box
+						.slider.slick-products
+							mixin slick-products-box(img, name, txt, className)
+								.slick-products__box-wrapper
+									div(class="slick-products__box slick-products__box--" + className)
+										.slick-products__img(style="background-image: url(" + require('../../components/images/slider-home-' + img + '.jpg') + ")")
+										.slick-products__info
+											.slick-products__name
+												p= name
+											.slick-products__txt
+												p= txt
+											a(href="#", data-toggle="modal", data-target="#modalPortfolio").slick-products__link Read more
+							mixin slick-slide()
+								- for(var i = 0;i < 5;i++) {
+									div
+										.slick-products__block
+											ul.row
+												li.col-md-4.col-sm-6
+													+slick-products-box('1', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet augue tortor, ultrices mattis nibh pellentesque a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas imperdiet...', 'small')
+													+slick-products-box('6', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet augue tortor, ultrices mattis nibh pellentesque a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas imperdiet...', 'small')
+												li.col-md-4.col-sm-6
+													+slick-products-box('3', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet augue tortor, ultrices mattis nibh pellentesque a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas imperdiet...', 'small')
+													+slick-products-box('4', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet augue tortor, ultrices mattis nibh pellentesque a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas imperdiet...', 'small')
+												li.col-md-4.col-sm-12
+													+slick-products-box('2', 'Lorem ipsum dolor sit amet, consectetur adipiscing', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquet augue tortor, ultrices mattis nibh pellentesque a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas imperdiet...', 'large')
+								- }
+							+slick-slide()
+				div(id="menu2", class="tab-pane fade")
+					.tab-content__box
+						.slider.slick-products
+							+slick-slide()
+				div(id="menu3", class="tab-pane fade")
+					.tab-content__box
+						.slider.slick-products
+							+slick-slide()
+				div(id="menu4", class="tab-pane fade")
+					.tab-content__box
+						.slider.slick-products
+							+slick-slide()

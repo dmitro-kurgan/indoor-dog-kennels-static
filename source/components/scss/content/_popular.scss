@@ -1,0 +1,119 @@
+.popular {
+	margin-top: #{$section-margin};
+	@media #{$mobile} {
+		margin-top: 25px;
+	}
+	.container {
+		position: relative;
+	}
+	&__top {
+		margin-top: 15px;
+		max-width: 350px;
+		p {
+			color: #727171;
+			font: 200 normal 16px $font2;
+		}
+	}
+	&__block {
+		position: relative;
+	}
+	&__accordion {
+		top: 120px;
+		left: 0px;
+		width: 100%;
+		padding-left: 50px;
+		padding-right: 50px;
+		background: url(../images/body-background.jpg)no-repeat;
+		@media #{$mobile} {
+			padding-bottom: 50px;
+			padding-left: 25px;
+			padding-right: 25px;
+		}
+		&.container {
+			position: absolute;
+			@media #{$mobile} {
+				margin-top: 30px;
+				position: initial;
+			}
+		}
+		.panel {
+			box-shadow: none;
+			border: none;
+		}
+		.panel-group {
+			text-align: left;
+			@media #{$mobile} {
+				margin-bottom: 0px;
+			}
+		}
+		.panel-title {
+			color: #2e2e2e;
+			font-size: 17px;
+			font-weight: 700;
+		}
+		.panel-heading {
+			padding: 17px 0px;
+			border-bottom: 1px solid #e8e8e8;
+			position: relative;
+			a {
+				display: block;
+				&:after {
+					content: "";
+					position: absolute;
+					font: 700 normal 30px $main_font;
+					right: 5px;
+					bottom: 5px;
+					display: inline-block;
+					line-height: 1;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					float: right;
+					color: #a7916f;
+					transition: transform .25s linear;
+					-webkit-transition: -webkit-transform .25s linear;
+				}
+				&[aria-expanded="true"] {
+					&:after {
+						content: "\2212";
+
+						-webkit-transform: rotate(180deg);
+						transform: rotate(180deg);
+					}
+				}
+				&[aria-expanded="false"] {
+					&:after {
+						content: "\002b";
+						-webkit-transform: rotate(90deg);
+						transform: rotate(90deg);
+						bottom: 5px;
+						right: 5px;
+						color: #3c3b3b;
+					}
+				}
+			}
+		}
+		.panel-collapse {
+			border-bottom: 1px solid #e8e8e8;
+		}
+		.panel-body {
+			padding: 25px 0 30px 0;
+			border: none;
+			p {
+				color: #4d4d4d;
+				font: 200 normal 16px $font2;
+				line-height: 1.15;
+			}
+		}
+	}
+	&__background {
+		margin-top: 225px;
+		min-height: 575px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		background-attachment: fixed;
+		@media #{$mobile} {
+			display: none;
+		}
+	}
+}

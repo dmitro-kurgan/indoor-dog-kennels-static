@@ -1,0 +1,28 @@
+section.home#home
+	.container
+		.home__content
+			.row
+				.home__left.col-md-6
+					h1.
+						Lorem ipsum dolor amet, conse adipiscing elit. Fusce aliquet augue
+					a(href="#").home__watch Watch the Video
+					.row
+						.home__left-left.col-sm-6
+							p
+								| Mauris ut nibh risus. Vestibulum vitae mauris at nunc dignissim vehicula.
+								a(href="#") Duis nunc
+								| odio, mattis id
+								a(href="#") bibendum
+								| sit amet, consequat in
+						.home__left-right.col-sm-6
+							p
+								| Aenean sit amet semper enim, quis interdum ante.
+								a(href="#") Duis consequat
+								| libero et nisl tristique, quis lacinia lacus vulputate.
+				.home__right.col-md-6
+					.slider.slick-home
+						- var arr = [1, 2, 3, 4]
+						each img in arr
+							div
+								.slick-home__box
+									.slick-home__img(style='background-image: url(' + require('../../components/images/slider-home-' + img + '.jpg') + ')')

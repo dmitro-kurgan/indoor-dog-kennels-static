@@ -1,0 +1,44 @@
+section.blog#blog
+	.container
+		.blog__content
+			.slider.slick-blog
+				//- button(class="slick-prev slick-arrow", aria-label="Previous", type="button")
+				mixin slick-blog(img, name, txt, data, by)
+					div
+						.row
+							.col-sm-6
+								.slick-blog__left(style="background-image: url(" + require('../../components/images/slider-home-' + img + '.jpg') + ")")
+							.col-sm-6
+								.slick-blog__right
+									.section-title
+										span Proin lobortis, metus
+										h2
+											| Latest from blog
+											p 04.
+									.slick-blog__name
+										h5= name
+									.slick-blog__txt
+										p= txt
+									.slick-blog__link
+										a(href="#") read more
+								.slick-blog__bottom
+									.slick-blog__data
+										span= data
+										p= by
+				+slick-blog('1', 'Proin lobortis, metus at', 'Etiam fringilla massa sit amet risus dignissim, vitae fermentum nunc efficitur. Maecenas ultricies, ipsum eget malesuada venenatis, lacus dolor porttitor lorem, ut condimentum nunc nisl quis massa. Pellentesque scelerisque enim finibus, faucibus erat in, imperdiet velit. Mauris scelerisque mi ac eros convallis, sed faucibus dui placerat.', 'July 25, 2018', 'by admin')
+				+slick-blog('1', 'Proin lobortis, metus at', 'Etiam fringilla massa sit amet risus dignissim, vitae fermentum nunc efficitur. Maecenas ultricies, ipsum eget malesuada venenatis, lacus dolor porttitor lorem, ut condimentum nunc nisl quis massa. Pellentesque scelerisque enim finibus, faucibus erat in, imperdiet velit. Mauris scelerisque mi ac eros convallis, sed faucibus dui placerat.', 'July 25, 2018', 'by admin')
+				+slick-blog('1', 'Proin lobortis, metus at', 'Etiam fringilla massa sit amet risus dignissim, vitae fermentum nunc efficitur. Maecenas ultricies, ipsum eget malesuada venenatis, lacus dolor porttitor lorem, ut condimentum nunc nisl quis massa. Pellentesque scelerisque enim finibus, faucibus erat in, imperdiet velit. Mauris scelerisque mi ac eros convallis, sed faucibus dui placerat.', 'July 25, 2018', 'by admin')
+				+slick-blog('1', 'Proin lobortis, metus at', 'Etiam fringilla massa sit amet risus dignissim, vitae fermentum nunc efficitur. Maecenas ultricies, ipsum eget malesuada venenatis, lacus dolor porttitor lorem, ut condimentum nunc nisl quis massa. Pellentesque scelerisque enim finibus, faucibus erat in, imperdiet velit. Mauris scelerisque mi ac eros convallis, sed faucibus dui placerat.', 'July 25, 2018', 'by admin')
+			// .blog__bottom
+			// 	a(href="#").blog__bottom-prev
+			// 		span Prev
+			// 		p
+			// 			| Aenean ut congue nibh.
+			// 	.blog__bottom-center
+			// 		p
+			// 			| Indoor Dog
+			// 			span Kennels
+			// 	a(href="#").blog__bottom-next
+			// 		span Next
+			// 			p
+			// 				| Aenean ut congue nibh.

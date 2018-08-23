@@ -1,0 +1,240 @@
+.products {
+	margin-top: #{$section-margin};
+	&__block {
+		margin-top: 50px;
+		@media #{$mobile} {
+			margin-top: 15px;
+		}
+		.nav {
+			a {
+				font: 500 normal 16px $font2;
+				color: #7b7b7b;
+				position: relative;
+			}
+			&__num {
+				position: absolute;
+				top: -10px;
+				right: -15px;
+				font: 400 normal 14px $font3;
+				color: #7b7b7b;
+			}
+			li {
+				position: relative;
+				margin-right: 15px;
+				@media #{$mobile} {
+					margin-top: 15px;
+				}
+				span {
+					transiton: $main_transition;
+				}
+				a {
+					transiton: $main_transition;
+					&:after {
+						content: '';
+						position: absolute;
+						left: 50%;
+						bottom: -5px;
+						height: 2px;
+						width: 0px;
+						background-color: #3c3b3b;
+						transiton: $main_transition;
+					}
+				}
+				&.active {
+					span {
+						color: #3c3b3b;
+					}
+					a {
+						color: #3c3b3b;
+						&:after {
+							left: 0px;
+							width: 100%;
+						}
+					}
+				}
+				& + li {
+					padding-left: 20px;
+					// margin-left: 15px;
+					@media #{$mobile} {
+
+					}
+					&:before {
+						content: '/';
+						position: absolute;
+						left: 0px;
+						top: 0px;
+						bottom: 0px;
+						margin: auto;
+						font: 500 normal 16px $font2;
+						color: #7b7b7b;
+					}
+				}
+			}
+		}
+		.tab-content {
+			margin-top: 10px;
+			margin-bottom: 15px;
+		}
+	}
+	.slick {
+		&-products {
+			&__block {
+				ul {
+					li {
+						.slick-products__box-wrapper {
+							&:nth-child(2) {
+								margin-bottom: 25px;
+							}
+						}
+					}
+				}
+			}
+			&__box-wrapper {
+				perspective: 1500px;
+				&:hover {
+					.slick-products__box {
+						transform: rotateY(180deg);
+					}
+				}
+			}
+			&__box {
+				margin-top: 25px;
+
+				position: relative;
+				transition: 0.5s;
+				transform-style: preserve-3d;
+				$min-height: 300px;
+				&--small {
+					min-height: #{$min-height};
+				}
+				&--large {
+					min-height: calc(#{$min-height} * 2 + 25px);
+					@media #{$tablet} {
+						min-height: #{$min-height};
+					}
+				}
+			}
+			&__img, &__info {
+				background-color: $main_color;
+				@include addPrefix(backface-visibility, hidden);
+			}
+			&__img {
+				min-height: inherit;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+			}
+			&__info {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				padding: 40px 35px 25px 35px;
+				@include addPrefix(backface-visibility, hidden);
+				transform: rotateY(180deg);
+				@media #{$desctop} {
+					padding: 25px;
+				}
+			}
+			&__name {
+				p {
+					font-size: 18px;
+					font-weight: 700;
+					line-height: 1.25;
+				}
+				padding-bottom: 8px;
+				margin-bottom: 15px;
+				border-bottom: 1px solid #eae7e3;
+			}
+			&__txt {
+				p {
+					font: 300 normal 16px $font2;
+					color: #727171;
+					line-height: 1.25;
+				}
+			}
+			&__link {
+				position: absolute;
+				bottom: 25px;
+				right: 35px;
+				font-size: 18px;
+				font-weight: 700;
+				color: #6b725a;
+				padding-bottom: 5px;
+				&:after {
+					content: '';
+					position: absolute;
+					background-color: #dfded6;
+					height: 1px;
+					width: 100%;
+					bottom: 0px;
+					left: 0px;
+				}
+			}
+		}
+		&-prev, &-next {
+			width: 49px;
+			height: 49px;
+			border-radius: 50%;
+			background-color: #c9cdbc;
+			transition: $main_transition;
+			&:hover, &:focus, &:active {
+				background-color: #bdc4b0;
+				box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.15);
+			}
+			&:after, &:before {
+				content: '';
+				position: absolute;
+			}
+			&:before {
+				height: 2px;
+				width: 15px;
+				background-color: $main_color;
+				top: calc(50% - 1px);
+			}
+			&:after {
+				width: 0px;
+				height: 0px;
+				padding: 4px;
+				top: calc(50% - 5px);
+				border-style: solid;
+				border-color: $main_color;
+				border-width: 0px 2px 2px 0px;
+			}
+		}
+		&-prev {
+			z-index: 1;
+			left: -75px;
+			&:before {
+				right: 17px;
+				top: calc(50% + 0px);
+			}
+			&:after {
+				right: 23px;
+				@include addPrefix(transform, rotate(135deg));
+			}
+		}
+		&-next {
+			right: -75px;
+			&:before {
+				right: 16px;
+			}
+			&:after {
+				right: 16px;
+				@include addPrefix(transform, rotate(-45deg));
+			}
+		}
+	}
+	// ----------slick-slider in bootstrap fix-------------
+	.tab-content {
+		position: relative;
+	}
+	.tab-content > .tab-pane, .pill-content > .pill-pane {		    
+		display: block;
+		height: 0;
+		// overflow: hidden;
+	}		
+	.tab-content > .active, .pill-content > .active {		    
+		height: auto;
+	}
+}

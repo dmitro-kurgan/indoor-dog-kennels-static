@@ -1,0 +1,22 @@
+extends ../templates/base
+
+block variables
+	- var classBody = 'index-page'
+	- var classWrapper = 'index'
+
+block title
+	title Indoor Dog Kennels
+
+block main
+	include ../blocks/home
+	include ../blocks/products
+	include ../blocks/services
+	include ../blocks/popular
+	include ../blocks/blog
+	.contact-panel
+		.container
+			p Contacts:
+			a(href="mailto:" + mail, class="contact-panel__mail")= mail
+				span(aria-hidden='true', class='fa fa-envelope')
+			a(href="tel:+30" + tel, class="contact-panel__tel")= '+30-' + tel
+				span(aria-hidden='true', class='fa fa-phone')

@@ -1,0 +1,10 @@
+{
+  "navPages": {
+    "home" : "#home",
+    "products" : "#products",
+    "services" : "#services",
+    "faq" : "#popular",
+    "blog" : "#blog",
+    "contact" : "#footer"
+  }
+}

@@ -1,0 +1,30 @@
+- var json = require('../../data/nav.json')
+
+block variables
+- var twitter = ('#')
+- var instagram = ('#')
+- var facebook = ('#')
+- var mail = ('indiirdogkennels@gmail.com')
+- var tel = ('2106019311')
+doctype html
+html(lang="en")
+	head
+		block title
+			title Index
+		meta(charset="UTF-8")
+		meta(name="viewport", content="initial-scale=1.0, width=device-width, user-scalable=no")
+		block headscript
+	body(class='' + classBody)
+		div(class='wrapper wrapper--' + classWrapper)
+			block header
+				include ../modules/header
+			.content
+				block main
+			block footer
+				include ../modules/footer
+			// =====================BUTTON-TO-TOP========================
+			a#back-to-top.back-to-top(href='#', role='button', title='', data-toggle='tooltip', data-placement='left')
+				i.arrow
+			include ../modules/modal-services
+			include ../modules/modal-portfolio
+		block script

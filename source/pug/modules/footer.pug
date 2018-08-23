@@ -1,0 +1,66 @@
+footer
+	.footer#footer
+		.container
+			.contact__content
+				h2 / Stay connected
+
+				form.footer__form
+					.row
+						.form-group.col-sm-3
+							label(class='control-label required', for='hint', id="hint1") Name
+							input.form-control(type='text', id='name', name='name', required='required')
+						.form-group.col-sm-3
+							label(class='control-label', for='phone', id='hint2') Phone
+							input.form-control(type='text', id='phone', name='phone', required='required')
+						.form-group.col-sm-3
+							label(class='control-label required', for='email', id='hint3') E-mail
+							input.form-control(type='text', id='email', name='email', required='required')
+						.form-group.col-sm-3
+							button.btn(type='submit') Contact us
+						.form-group.col-sm-6.footer__form-comment
+							label(class='control-label', for='comment', id='hint4') E-mail
+							textarea.form-control(id='comment', name='comment')
+						.form-group.col-sm-6.footer__form-attachfile
+							input(id="file", type="file", name="file", class="inputfile btn", data-multiple-caption="{count} files", multiple)
+							label(for='file')
+								span Attach File
+				.footer__bottom
+					.row
+						.col-lg-6
+							.row
+								.col-sm-6
+									.footer__location
+										.footer__bottom-title / Location
+										ul
+											li Keas 69 Str.15234
+											li Chalandri Athens, Greece
+								.col-sm-6
+									.footer__contacts
+										.footer__bottom-title / Contacts
+										ul
+											li
+												span E.
+												a(href="mailto:" + mail)= mail
+											li
+												span P.
+												a(href="tel:+30" + tel)= '+30-' + tel
+						.col-lg-6
+							.row
+								.col-lg-4.col-sm-6
+									.footer__socials
+										.footer__bottom-title / Follow us
+										ul.clearfix
+											+socials(twitter, 'twitter')
+											+socials(instagram, 'instagram')
+											+socials(facebook, 'facebook')
+								.col-lg-4.col-sm-6
+									.footer__production
+										.footer__bottom-title / Website development
+										a(href="https://unitspace.top", target="_blank").footer__logo
+										
+								.col-lg-4.col-sm-6
+									.footer__copyright
+										.footer__bottom-title / Copyright
+										p
+											| © IndoorDogKennels
+											span(id='year')

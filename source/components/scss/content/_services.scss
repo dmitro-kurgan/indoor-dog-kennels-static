@@ -1,0 +1,113 @@
+.services {
+	margin-top: #{$section-margin};
+	@media #{$mobile} {
+		margin-top: 50px;
+	}
+	&__block {
+		margin-top: 50px;
+	}
+	&__box {
+		max-width: 390px;
+		@media #{$mobile} {
+			margin-bottom: 50px;
+		}
+		&-img {
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url(../images/services-sprite.png);
+			height: 47px;
+		}
+		&-title {
+			margin-top: 12px;
+			margin-bottom: 20px;
+			text-transform: uppercase;
+			font-size: 18px;
+			font-weight: 700;
+			@media #{$tablet} {
+				font-size: 15px;
+				margin-bottom: 15px;
+			}
+		}
+		&-text {
+			color: #727171;
+			font: 200 normal 16px $font2;
+			@media #{$tablet} {
+				min-height: 115px;
+			}
+			@media #{$mobile} {
+				min-height: initial;
+			}
+		}
+		&-link {
+			display: inline-block;
+			margin-top: 30px;
+			color: #a7916f;
+			font: 500 normal 16px $font2;
+			position: relative;
+			transition: $main_transition;
+			@media #{$mobile} {
+				margin-top: 15px;
+			}
+			&:after, &:before {
+				content: '';
+				position: absolute;
+				margin: auto;
+				transition: $main_transition;
+			}
+			&:before {
+				height: 2px;
+				width: 15px;
+				right: -30px;
+				background-color: #a7916f;
+				top: calc(50% - 2px);
+			}
+			&:after {
+				right: -31px;
+				width: 0px;
+				height: 0px;
+				padding: 4px;
+				top: calc(50% - 6px);
+				border-style: solid;
+				border-color: #a7916f;
+				border-width: 0px 2px 2px 0px;
+				@include addPrefix(transform, rotate(-45deg));
+			}
+			&:focus {
+				color: #a7916f;
+			}
+			&:hover {
+				color: #6c6660;
+				&:before {
+					background-color: #6c6660;
+				}
+				&:after {
+					border-color: #6c6660;
+				}
+			}
+		}
+	}
+	ul {
+		li {
+			&:nth-child(1) {
+				.services__box-img {
+					width: 79px;
+					height: 47px;
+					background-position: 0px 0px;
+				}
+			}
+			&:nth-child(2) {
+				.services__box-img {
+					width: 80px;
+					height: 47px;
+					background-position: -106px 0px;
+				}
+			}
+			&:nth-child(3) {
+				.services__box-img {
+					width: 79px;
+					background-position: -213px 0px;
+				}
+			}
+		}
+	}
+}

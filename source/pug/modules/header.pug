@@ -1,0 +1,27 @@
+header
+	.header
+		.container
+			.header__content
+				.header__logo
+					a(href="./")
+				.header__menu#navbar
+					.header__close#close
+						span.top
+						span.bottom
+					ul.clearfix.nav(role="tablist")
+						each link, name in json.navPages
+							li
+								a(href= link)= name
+				.header__socials
+					ul.clearfix
+						mixin socials(link, name)
+							li
+								a(href= 'https://' + name + '.com/' + link)
+									i(aria-hidden="true", class="fa fa-" + name)
+						+socials(twitter, 'twitter')
+						+socials(instagram, 'instagram')
+						+socials(facebook, 'facebook')
+				.header__hamburger#hamburger
+					span.top
+					span.mid
+					span.bottom

@@ -1,0 +1,277 @@
+header {
+	.header {
+		position: fixed;
+		left: 0px;
+		right: 0px;
+		top: 0px;
+		z-index: 99;
+		transform: translate3d(0, 0, 0);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom:0px;
+			z-index: -1;
+			opacity: 0;
+			background-image: url(../images/body-background.jpg);
+			bakground-repeat: no-repeat;
+			background-poition: center;
+			background-size: cover;
+			transition: $main_transition;
+			@media #{$mobile} {
+				// opacity: 0.5;
+			}
+		}
+		&__content {
+			display: flex;
+			justify-content: space-between;
+			height: 90px;
+			transition: $main_transition;
+			@media #{$mobile} {
+				padding: 15px 0;
+				height: 75px;
+			}
+		}
+		&__logo {
+			z-index: 99;
+			position: relative;
+
+			// top: 50px;
+			display: flex;
+    		align-items: center;
+    		width: 185px;
+    		// transition: 0.25s all;
+			@media #{$mobile} {
+				position: initial;
+			}
+			a {
+				display: inline-block;
+				// width: 185px;
+				// height: 119px;
+				opacity: 0;
+				background: url(../images/logo.svg);
+				background-size: cover;
+				width: 95px;
+				height: 64px;
+				transition: $main_transition;
+				@media #{$mobile} {
+					opacity: 1;
+				}
+				// @media #{$mobile} {
+				// 	width: 100px;
+				// 	height: 64px;
+				// }
+			}
+		}
+		&__menu {
+			margin-left: 400px;
+			align-self: center;
+			@media #{$desctop-md} {
+				margin-left: 255px;
+			}
+			@media #{$desctop} {
+				margin-left: 50px;
+			}
+			@media #{$tablet} {
+				margin-left: 20px;
+			}
+			@media #{$mobile} {
+				position: fixed;
+				top: 0px;
+				left: 0px;
+				right: 0px;
+				margin-left: 0px;
+				background-color: rgba(255, 255, 255, 0.95);
+			    height: calc(100vh + 4px);
+				padding: 15px;
+				z-index: 99;
+				@include addPrefix(transform, translate(-100%, 0px));
+				transition: .4s transform ease-in-out;
+				overflow-y: scroll;
+				// width: 250px;
+				width: 100%;
+				text-align: center;
+				&.opened {
+				    @include addPrefix(transform, translate(0px, 0px));
+				}
+			}
+			li {
+				float: left;
+				@media #{$mobile} {
+					float: none;
+				}
+				& + li {
+					margin-left: 35px;
+					@media #{$tablet} {
+						margin-left: 15px;
+					}
+					@media #{$mobile} {
+						margin-left: 0px;
+						margin-top: 10px;
+						float: none;
+					}
+				}
+				&.active {
+					a {
+						&:after {
+							width: 100%;
+							left: 0px;
+						}
+					}
+				}
+			}
+			a {
+				font: 400 normal 14px $font2;
+				text-transform: uppercase;
+				position: relative;
+				@media #{$tablet} {
+					font-size: 12px;
+				}
+				@media #{$mobile} {
+					font-size: 14px;
+					display: inline-block;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					left: 50%;
+					width: 0px;
+					background-color: #3c3b3b;
+					height: 1px;
+					bottom: -5px;
+					transition: $main_transition;
+				}
+				&:hover, &:focus, &:active {
+					&:after {
+						width: 100%;
+						left: 0px;
+					}
+				}
+			}
+		}
+		&__socials {
+			align-self: center;
+			ul {
+				@media #{$mobile} {
+					margin-top: 30px;
+					text-align: center;
+				}
+			}
+			li {
+				float: left;
+				@media #{$mobile} {
+					display: inline-block;
+					float: none;
+				}
+				& + li {
+					margin-left: 12px;
+					@media #{$mobile} {
+						// float: left;
+						display: inline-block;
+						margin-top: 0px;
+					}
+				}
+			}
+			a {
+				transition: $main_transition;
+				&:after {
+					display: none;
+				}
+				&:hover {
+					color: #bdc4b0;
+				}
+			}
+		}
+		&__hamburger {
+			width: 22px;
+			height: 22px;
+			margin: auto 0px;
+			display: none;
+			position: relative;
+			cursor: pointer;
+			@media #{$mobile} {
+				display: inline-block;
+				vertical-align: middle;
+				margin: 10px 0px 10px 30px;
+			}
+			.top, .mid, .bottom {
+				position: absolute;
+				width: 100%;
+				display: block;
+				height: 3px;
+				margin-top: 5px;
+				background-color: #3c3b3b;
+				transition: $main_transition;
+			}
+			.top {
+				top: 0px;
+			}
+			.mid {
+				top: 7px;
+			}
+			.bottom {
+				bottom: 0px;
+			}
+			// &.opened {
+			// 	.top {
+			// 		@include addPrefix(transform, rotate(45deg));
+			// 		top: 7px;
+			// 	}
+			// 	.mid {
+			// 		opacity: 0;
+			// 	}
+			// 	.bottom {
+			// 		@include addPrefix(transform, rotate(-45deg));
+			// 		bottom: 7px;
+			// 	}
+			// }
+		}
+		&__close {
+			width: 22px;
+			height: 22px;
+			display: none;
+		    margin: 0px 0px 0px auto;
+			position: relative;
+			cursor: pointer;
+			@media #{$mobile} {
+				display: block;
+			}
+			.top, .bottom {
+				position: absolute;
+				width: 100%;
+				display: block;
+				height: 3px;
+				margin-top: 5px;
+				background-color: #3c3b3b;
+				transition: $main_transition;
+			}
+			.top {
+				@include addPrefix(transform, rotate(45deg));
+				top: 7px;
+			}
+			.bottom {
+				@include addPrefix(transform, rotate(-45deg));
+				bottom: 7px;
+			}
+		}
+		&.fixed {
+			&:after {
+				opacity: 0.9;
+			}
+			.header {
+				&__content {
+					height: 75px;
+				}
+				&__logo {
+					top: 0px;
+					a {
+						opacity: 1;
+						
+					}
+				}
+			}
+		}
+	}
+}
